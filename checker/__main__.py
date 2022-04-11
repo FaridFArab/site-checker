@@ -21,13 +21,15 @@ def site_is_online(url: str, timeout: int = 2) -> bool:
             return True
         except Exception as ex:
             error = ex
+            print(error)
         finally:
             connection.close()
     raise error
 
 
 if __name__ == '__main__':
-    pass
+    print(site_is_online('www.bourseview.com'))
+    print(site_is_online('www.yechizalaki.com'))
     # response = urlopen('https://python.org')
     # print(response.read())
     # connection = HTTPConnection('varzesh3.com', port=80, timeout=10)
